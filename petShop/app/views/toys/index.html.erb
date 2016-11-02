@@ -1,12 +1,20 @@
 <h1><%=@pet.name %></h1>
 
+<!-- i couldn't get this to work -->
+
+<p><%= link_to 'Add toy', new_pet_toy_path(@pet), remote: true, id:'add-toy-link'%></p>
+
+<p><%= link_to 'Add Toy', new_pet_toy_path(@pet) %></p>
+
+
+<div id="form-holder">
+</div>
+
 <ul>
   <% @toys.each do |toy| %>
     <li><%= link_to toy.description, pet_toy_path(@pet,toy) %></li>
   <% end %>
 </ul>
 
-<div id="toy-des">
-</div>
 
 

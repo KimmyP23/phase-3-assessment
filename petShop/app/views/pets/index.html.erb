@@ -2,7 +2,7 @@
 
 <ul id="pet-list">
 <% @pets.each do |pet| %>
-  <li><%= link_to pet.name, pet_toys_path(pet), remote: true %></li>
+  <li><%= link_to pet.name, pet_toys_path(pet) %></li>
 <% end %>
 </ul>
 

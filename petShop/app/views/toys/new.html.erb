@@ -1,0 +1,17 @@
+<h1>Add New Toy</h1>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for [@pet, @toy] do |f| %>
+  <div id="form-part">
+    <%= f.label :description %>
+    <%= f.text_field :description, placeholder: "Description" %>
+  </div>
+    <%= f.submit %>
+<% end %>

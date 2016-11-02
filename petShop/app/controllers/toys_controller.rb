@@ -9,8 +9,27 @@ class ToysController < ApplicationController
   def show
   end
 
-  
+   def new
+    @toy = Toy.new
+    if request.xhr?
+      render partial: 'form'
+    end
+  end
 
+  def create
+    @toy = @pet.toys.new(toy_params)
+
+    if @toy.save
+      if request.xhr?
+        render json: @toy
+      else
+        redirect_to pet_toy_path(@pet, @toy)
+      end
+    else
+      @errors = @toy.errors.full_messages
+      render 'new'
+    end
+  end
 
   private
   def find_pet
