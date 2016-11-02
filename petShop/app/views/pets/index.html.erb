@@ -1,0 +1,10 @@
+<h1>Welcome to the PetShop!</h1>
+
+<ul id="pet-list">
+<% @pets.each do |pet| %>
+  <li><%= link_to pet.name, pet_toys_path(pet), remote: true %></li>
+<% end %>
+</ul>
+
+<div id="show-toy">
+</div>

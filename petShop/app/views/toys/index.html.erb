@@ -1,0 +1,12 @@
+<h1><%=@pet.name %></h1>
+
+<ul>
+  <% @toys.each do |toy| %>
+    <li><%= link_to toy.description, pet_toy_path(@pet,toy) %></li>
+  <% end %>
+</ul>
+
+<div id="toy-des">
+</div>
+
+
